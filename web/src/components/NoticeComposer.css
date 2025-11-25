@@ -1,0 +1,22 @@
+.notice-composer-card {
+  padding: 16px;
+}
+
+.notice-composer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .notice-composer-card {
+    padding: 8px;
+  }
+
+  .notice-composer-actions {
+    flex-direction: column;
+  }
+
+  .notice-composer-actions .ant-btn {
+    width: 100%;
+  }
+}

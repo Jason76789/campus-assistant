@@ -1,0 +1,13 @@
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 16px; /* 在小屏幕上提供左右边距 */
+}
+
+@media (max-width: 720px) {
+  .login-card {
+    border: none; /* 在移动端移除边框，使其看起来更原生 */
+    box-shadow: none; /* 移除阴影 */
+    margin: 0;
+  }
+}

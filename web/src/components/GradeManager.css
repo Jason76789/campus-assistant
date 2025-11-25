@@ -1,0 +1,19 @@
+.grade-manager-card {
+  padding: 16px;
+}
+
+.admin-search,
+.add-grade-button {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .grade-manager-card {
+    padding: 8px;
+  }
+
+  .admin-search,
+  .add-grade-button {
+    width: 100%;
+  }
+}

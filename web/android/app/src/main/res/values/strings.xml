@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">小智校园助手</string>
+    <string name="title_activity_main">小智校园助手</string>
+    <string name="package_name">com.example.campusassistant</string>
+    <string name="custom_url_scheme">com.example.campusassistant</string>
+</resources>
