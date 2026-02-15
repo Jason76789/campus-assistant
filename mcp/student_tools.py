@@ -151,6 +151,27 @@ def poll_new_items(user_external_id: str, timeout_seconds: int = 5) -> Dict[str,
     # Call poll endpoint directly
     return _make_request("GET", "/mcp/poll", params={"user_id": internal_id, "timeout": timeout_seconds})
 
+@mcp.tool()
+def confirm_memo(student_external_id: str, memo_id: str) -> Dict[str, Any]:
+    """Mark a memo as confirmed/completed by the student
+
+    Args:
+        student_external_id: External ID of the student
+        memo_id: ID of the memo to mark as confirmed
+    """
+    logger.info("confirm_memo student=%s memo_id=%s", student_external_id, memo_id)
+    command = {
+        "command": "confirm_memo",
+        "user_id": str(student_external_id),
+        "role": "student",
+        "timestamp": _now_iso_sh(),
+        "context": {
+            "memo_id": memo_id
+        },
+        "idempotency_key": str(uuid.uuid4())  # help backend dedupe
+    }
+    return _make_request("POST", "/mcp/command", json_body=command)
+
 # ----------------- run -----------------
 if __name__ == "__main__":
     logger.info("StudentTools starting up. Backend=%s", BASE_URL)
