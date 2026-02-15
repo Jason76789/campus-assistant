@@ -1,3 +1,6 @@
 node_modules
 venv/
 mcp-calculator-main/
+node_modules/
+.vscode/settings.json
+*.log
